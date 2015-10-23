@@ -1,0 +1,211 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+     
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   
+     
+
+</head>
+<body>
+<div class="container-fluid">
+  <div class="jumbotron">
+       <div class="page-header">
+        <h1><small>Delivery Menu Form</small></h1> 
+        <p>Choose Address Type:</p> 
+  </div>
+ 
+ 
+
+<form id="residePlace"> 
+  <select id="habitatType" onchange="myFunction()">
+    <option id="house">House</option>
+    <option id="apt">Apartment</option>
+    <option id="bus">Business</option>
+    <option id="campus">Campus</option>
+    <option id="dorm">Dorm</option>
+      <option id="other">Other</option>
+  </select>
+</form>
+
+
+ </div> <!--close CONTAINER-->
+    
+        
+     <!---NAME INPUT -->
+     <form id="delAddress">
+      <div class="form-group">
+          <label for="inputName" class="col-sm-3 control-label" >Name</label>
+          <div class="col-sm-9"> 
+          <input id="inputName" class="form-control" type="text" placeholder="Name" >
+          </div>
+      </div>
+     <!---ADDRESS INPUT -->
+    <div class="form-group">    
+    <label class="col-sm-3 control-label" for="inputAddress">Address</label>
+         <div class="col-sm-9">
+          <input class="form-control" type="text" id="inputAddress"
+          placeholder="Address">
+          </div>
+      </div>
+       <!---SUITE INPUT -->
+        <div>      
+          <label class="col-sm-3 control-label" for="inputApt">Apt. or Suite</label></div>
+          <div class="col-sm-9">
+          <input class="form-control" type="text" id="inputApt"
+          placeholder="No. or Ste.">  
+          </div> 
+   
+          <!---CITY INPUT -->
+          <div> 
+          <label class="col-sm-3 control-label" for="inputCity">City</label>
+            </div>
+          <div class="col-sm-9">
+          <input class="form-control" type="text" id="inputCity"
+          placeholder="City:"> 
+          </div> 
+         </form>  
+             
+<!---RADIO BUTTON PIZZA TYPE -->
+             
+ <form id="pizzaChoice">  
+    <label>Pizza type and size</label>      
+    <!---Tossed Crust -->
+                     <div class="dropdown"><label for="tossedCrust" class="radio-inline">Tossed Crust </label> <input id="tossedCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "tossed" data-toggle="dropdown" value=""/><ul
+class="dropdown-menu">
+    <li><a href="#">Small</a></li>
+    <li><a href="#">Medium</a></li>
+    <li><a href="#">Large</a></li>
+  </ul>  
+</div> 
+    <!---Thin Crust -->
+    <div class="dropdown"><label for="thinCrust" class="radio-inline">Thin Crust </label> <input id="thinCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "thinCrust" data-toggle="dropdown"/><ul class="dropdown-menu">
+    <li><a href="#">Medium</a></li>
+    <li><a href="#">Large</a></li>
+  
+  </ul> 
+</div> 
+     <!---NYC Crust -->
+ <div class="dropdown">                 <label for="nycCrust" class="radio-inline">NYC Crust  </label><input id="nycCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "nycCrust" data-toggle="dropdown"><ul class="dropdown-menu">
+    <li><a href="#">Large</a></li>
+    <li><a href="#">ExLarge</a></li>
+</ul> 
+</div>                   
+     <!---Gluten free -->
+<div class="dropdown">                 <label for="gltnFreeCrust" class="radio-inline">Gluten Free </label><input id="gltnFreeCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "gltnFree" data-toggle="dropdown"><ul class="dropdown-menu">
+    <li><a href="#">Small</a></li>
+</ul> 
+</div>                        
+    </form> 
+     
+    <!-- CHEESE   --> 
+       
+    <form idcheeseSauce> 
+<label>Cheese selection:</label>
+  <div>
+      <select>
+  <option value="0" name="noChrg">Light:no charge</option>
+  <option value="0" name="nrml" selected>Normal:no charge</option>
+  <option value="2.99" name="extra">Extra +$2.99</option>
+  <option value="3.99" name="dble">Double +$3.99</option>
+</select>
+  </div>
+
+            <!-- SAUCE   -->   
+    <label>Sause selection:</label>
+  <div>
+      <select>
+  <option value="0" name = "nocost" selected>Light:no charge</option>
+  <option value="1.99" name="hearty">Hearty Tomato: +$1.99</option>
+  <option value="2.99" name="bbq">BBQ Sauce +$2.99</option>
+  </select>
+  </div>
+    </form> 
+    <!--end Row -->
+    
+     
+     <fieldset id="toppings">
+            <legend><strong>Pizza Toppings</strong></legend>
+            <p>Include toppings $.99 each</p>
+            <div class="col1">
+            
+<input type="checkbox" name="pepperroni" id="pepperroni" value=".99" tabindex="170" />
+              <label for="pepperroni">Pepperoni</label>
+
+<input type="checkbox" name="sausage" id="sausage" tabindex="180" />
+              <label for="sausage">Sausage</label>
+            
+<input type="checkbox" name="ham" id="ham" tabindex="190" />
+              <label for="ham">Ham</label>
+            </div>
+            <div class="col2">
+            
+<input type="checkbox" name="bacon" id="bacon" tabindex="210" />
+              <label for="bacon">Bacon</label>
+            
+ <input type="checkbox" name="salami" id="salami" tabindex="220" />
+              <label for="salami">Salami</label>
+
+ <input type="checkbox" name="peppers" id="peppers" tabindex="230" />
+              <label for="peppers">Peppers</label>
+            </div>
+            <div class="col3">
+<input type="checkbox" name="olives" id="olives" tabindex="240" />
+              <label for="olives">Olives</label>
+              
+<input type="checkbox" name="jalapenos" id="snowboard" tabindex="250" />
+              <label for="jalapenos">Jalapenos</label>
+
+ <input type="checkbox" name="mushrooms" id="mushrooms" tabindex="260" />
+              <label for="mushrooms">Mushrooms</label>
+
+              
+<input type="checkbox" name="pineapple" id="pineapple" tabindex="250" />
+              <label for="pineapple">Pineapple</label>
+
+             
+<input type="checkbox" name="onion" id="onion" tabindex="250" />
+              <label for="onion">Onion</label>
+
+            </div>
+            <p class="clearBoth">
+              <label for="delDisplay">Your Address</label><br />
+              <textarea name="deliveryAddress" id="delDisplay" cols="45" rows="5" tabindex="270"></textarea>
+         </p>
+         <div class="order">
+             <span>orderInfo</span>Your order is on its way. 
+         </div>
+          
+              <input type="button"  name="order2" id="orderBtn" value="Place Order" onclick="order();"/>
+          
+          </fieldset>
+    <div class="order">
+        your cost <span id="price">0.00</span> you will be called <span id="add"></span>
+    </div>
+       <!--close toppings FORM-->
+       </div><!--end Row -->
+  
+  <!--close JUMBOTRON--> 
+
+<!-- close CONTAINER -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
