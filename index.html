@@ -9,17 +9,15 @@
     <meta name="keywords" content="">
     
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-     
 
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
    
-     
+  <!-- myscript-->
+<script src="js/script.js"></script>   
 
 </head>
 <body>
@@ -27,87 +25,111 @@
   <div class="jumbotron">
        <div class="page-header">
         <h1><small>Delivery Menu Form</small></h1> 
-        <p>Choose Address Type:</p> 
-  </div>
- 
- 
-
-<form id="residePlace"> 
-  <select id="habitatType" onchange="myFunction()">
-    <option id="house">House</option>
-    <option id="apt">Apartment</option>
-    <option id="bus">Business</option>
-    <option id="campus">Campus</option>
-    <option id="dorm">Dorm</option>
-      <option id="other">Other</option>
-  </select>
-</form>
-
+        <label for="residePlace">Address Type</label>
+  
+    <form id="residence"> 
+      <select id="habitat_type">
+        <option value="house" id="house">House</option>
+        <option value="apartment" id="apt">Apartment</option>
+        <option value="business" id="bus">Business</option>
+        <option value="campus" id="campus">Campus</option>
+        <option value="dormitory" id="dorm">Dorm</option>
+          <option value="other" id="other">Other</option>
+      </select>
+    </form>
+</div>
 
  </div> <!--close CONTAINER-->
     
-        
-     <!---NAME INPUT -->
+
+     <!---DELIVERY INFO -->
      <form id="delAddress">
       <div class="form-group">
-          <label for="inputName" class="col-sm-3 control-label" >Name</label>
-          <div class="col-sm-9"> 
-          <input id="inputName" class="form-control" type="text" placeholder="Name" >
+         
+         <!---NAME INPUT -->
+          <label for="input_name" class="col-sm-3 control-label" >Name</label>
+          <div class="col-sm-8"> 
+          <input id="input_name" class="form_control" type="text" placeholder="Name">
+          <span>*</span><br>
           </div>
-      </div>
-     <!---ADDRESS INPUT -->
-    <div class="form-group">    
-    <label class="col-sm-3 control-label" for="inputAddress">Address</label>
-         <div class="col-sm-9">
-          <input class="form-control" type="text" id="inputAddress"
+       
+     
+      <!---ADDRESS INPUT -->
+       
+    <label class="col-sm-3 control-label" for="input_address">Address</label>
+         <div class="col-sm-8">
+          <input class="form-control" type="text" id="input_address"
           placeholder="Address">
+          <span>*</span><br>
           </div>
-      </div>
+      
        <!---SUITE INPUT -->
-        <div>      
+               
           <label class="col-sm-3 control-label" for="inputApt">Apt. or Suite</label></div>
-          <div class="col-sm-9">
-          <input class="form-control" type="text" id="inputApt"
+          <div class="col-sm-8">
+          <input class="form-control" type="text" id="input_apartment"
           placeholder="No. or Ste.">  
           </div> 
    
-          <!---CITY INPUT -->
-          <div> 
-          <label class="col-sm-3 control-label" for="inputCity">City</label>
-            </div>
-          <div class="col-sm-9">
-          <input class="form-control" type="text" id="inputCity"
-          placeholder="City:"> 
+          <!---ZIP INPUT -->
+           
+          <label class="col-sm-3 control-label" for="input_zip">ZIP Code</label>
+             
+          <div class="col-sm-8">
+          <input class="form-control" type="text" id="input_zip"
+          placeholder="Zip:">
+          <span>*</span><br> 
           </div> 
-         </form>  
+          
+          <!---PHONE INPUT -->
+           
+          <label class="col-sm-3 control-label" for="input_phone">Phone #</label>
+            
+          <div class="col-sm-8">
+          <input class="form-control" type="text" id="input_phone"
+          placeholder="Phone number:">
+          <span>*</span><br>
+         </div> 
+          
+          <!---EMAIL INPUT -->
+           
+          <label class="col-sm-3 control-label" for="input_email">Email:</label>
+             
+          <div class="col-sm-8">
+          <input class="form-control" type="text" id="input_email"
+          placeholder="Email:">
+          <span>*</span><br> 
+          </div> 
+          </form>  
              
 <!---RADIO BUTTON PIZZA TYPE -->
              
- <form id="pizzaChoice">  
+ <form id="pizza_choice">  
     <label>Pizza type and size</label>      
     <!---Tossed Crust -->
-                     <div class="dropdown"><label for="tossedCrust" class="radio-inline">Tossed Crust </label> <input id="tossedCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "tossed" data-toggle="dropdown" value=""/><ul
-class="dropdown-menu">
+    
+<div class="dropdown"><label for="tossed_crust" class="radio-inline">Tossed Crust </label> <input id="tossed_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "tossed" data-toggle="dropdown" value=""/>
+
     <li><a href="#">Small</a></li>
     <li><a href="#">Medium</a></li>
     <li><a href="#">Large</a></li>
   </ul>  
 </div> 
     <!---Thin Crust -->
-    <div class="dropdown"><label for="thinCrust" class="radio-inline">Thin Crust </label> <input id="thinCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "thinCrust" data-toggle="dropdown"/><ul class="dropdown-menu">
+    <div class="dropdown"><label for="thin_crust" class="radio-inline">Thin Crust </label> <input id="thin_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "thinCrust" data-toggle="dropdown"/>
     <li><a href="#">Medium</a></li>
     <li><a href="#">Large</a></li>
   
   </ul> 
 </div> 
      <!---NYC Crust -->
- <div class="dropdown">                 <label for="nycCrust" class="radio-inline">NYC Crust  </label><input id="nycCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "nycCrust" data-toggle="dropdown"><ul class="dropdown-menu">
+ <div class="dropdown"><label for="nyc_crust" class="radio-inline">NYC Crust  </label><input id="nyc_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "nycCrust" data-toggle="dropdown">
     <li><a href="#">Large</a></li>
     <li><a href="#">ExLarge</a></li>
 </ul> 
 </div>                   
      <!---Gluten free -->
-<div class="dropdown">                 <label for="gltnFreeCrust" class="radio-inline">Gluten Free </label><input id="gltnFreeCrust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "gltnFree" data-toggle="dropdown"><ul class="dropdown-menu">
+<div class="dropdown"><label for="free_crust" class="radio-inline">Gluten Free </label><input id="free_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "gltnFree" data-toggle="dropdown">
     <li><a href="#">Small</a></li>
 </ul> 
 </div>                        
@@ -187,14 +209,16 @@ class="dropdown-menu">
               <label for="delDisplay">Your Address</label><br />
               <textarea name="deliveryAddress" id="delDisplay" cols="45" rows="5" tabindex="270"></textarea>
          </p>
-         <div class="order">
-             <span>orderInfo</span>Your order is on its way. 
-         </div>
           
-              <input type="button"  name="order2" id="orderBtn" value="Place Order" onclick="order();"/>
+          
+              <input type="button" id="order_btn" value="Place Order">
           
           </fieldset>
-    <div class="order">
+          <!--
+          <div class="order">
+             <span>orderInfo</span>Your order is on its way. 
+         </div>
+    <div  class="order">
         your cost <span id="price">0.00</span> you will be called <span id="add"></span>
     </div>
        <!--close toppings FORM-->

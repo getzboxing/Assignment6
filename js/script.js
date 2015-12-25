@@ -1,11 +1,132 @@
-// document.delAddress.inputName.innerHtml=
+// VALIDATE USER INPUT
 
-//document.addEventListener("DOMContentLoaded", init, false);
+ "use strict";
+var $ =  function(id){
+    return document.getElementById(id);
+}
 
-     
+ /*VALIDATE RESIDENCE TYPE*/ 
  
+$("habitat_type").onchange = function(){myFunction()};
 
-/**/
+function myFunction(){
+    
+    var x = $("habitat_type").selectedIndex;
+    if (document.getElementsByTagName("option")[x].value == "other"){
+        alert("alert");
+        
+        var addrText = document.createElement("INPUT");
+        addrText.setAttribute("type", "text");
+         
+        addrText.className = "css_class_name";
+        document.body.appendChild(addrText); // put it into the DOM
+        //("residence").appendChild(addrText);
+        
+        
+    }
+         
+    } 
+
+/*VALIDATE NAME working!*/ 
+ var order = function(){
+     
+     var inputName = $("input_name");
+     var allLetters = /^[a-zA-Z]+$/;
+     var isValid=false;
+     if(inputName.value == ""){
+         inputName.nextElementSibling.firstChild.nodeValue = "Name is required.";
+         isValid = false;
+     }else if (inputName.value.match(allLetters)){
+               //return true;
+               isValid = true;
+               }else{
+         inputName.nextElementSibling.firstChild.nodeValue = "Name must contain only letters";
+                isValid = false;
+               }
+     
+     /*VALIDATE ADDRESS working!*/
+     
+     var inputAddress = $("input_address");
+     var allNumsLtrs = /^[a-zA-Z0-9]+$/;
+     if (inputAddress.value == ""){
+         inputAddress.nextElementSibling.firstChild.nodeValue = "Address is required.";
+         isValid = false;
+     }else if (inputAddress.value.match(allNumsLtrs)){
+               //return true;
+               isValid = true;
+               } 
+     
+     /*VALIDATE ZIP working!*/
+     
+     var inputZip = $("input_zip");
+     var zipValidate = /^([0-9]{5})$/;
+     if (inputZip.value == ""){
+         inputZip.nextElementSibling.firstChild.nodeValue = "ZIP code required.";
+         isValid = false;
+         }else if (inputZip.value.match(zipValidate)){
+             isValid = true;
+         }else{
+         inputZip.nextElementSibling.firstChild.nodeValue = "Must match 5 or 9 digit input.";
+                isValid = false;
+               }
+     
+     /*VALIDATE PHONE works! remove required prompt*/
+     
+     var inputPhone = $("input_phone");
+     var phoneValidate = /^\+?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+     if (inputPhone.value == ""){
+         inputPhone.nextElementSibling.firstChild.nodeValue = "Phone number required.";
+         isValid = false;
+     }else if (inputPhone.value.match(phoneValidate)){
+         isValid = true;
+     }else{
+         inputPhone.nextElementSibling.firstChild.nodeValue = "Must match phone number pattern.";
+     }
+     
+     /*VALIDATE EMAIL works!*/
+      var inputEmail = $("input_email");
+     var emailValidate = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/;
+     if (inputEmail.value == ""){
+         inputEmail.nextElementSibling.firstChild.nodeValue = "Email address required.";
+         isValid = false;
+     }else if (inputEmail.value.match(emailValidate)){
+         isValid = true;
+     }else{
+         inputEmail.nextElementSibling.firstChild.nodeValue = "Must be valid email.";
+     }
+     
+     
+     /*RADIO BUTTONS DROPDOWN MENU*/
+$("habitat_type").onchange = function(){myFunction()};
+
+function myFunction(){
+    
+    var x = $("habitat_type").selectedIndex;
+    if (document.getElementsByTagName("option")[x].value == "other"){
+        alert("alert");
+        
+        var addrText = document.createElement("INPUT");
+        addrText.setAttribute("type", "text");
+         
+        addrText.className = "css_class_name";
+        document.body.appendChild(addrText); // put it into the DOM
+        //("residence").appendChild(addrText);
+        
+        
+    }
+         
+    }      
+     
+     }//end ORDER FUNCTION
+ 
+ 
+ 
+ window.onload = function(){
+     $("order_btn").onclick = order;
+     
+ }
+
+/* 
 //function order(){
     //alert("works");
 
