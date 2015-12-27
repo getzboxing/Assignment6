@@ -28,6 +28,7 @@
         <label for="residePlace">Address Type</label>
   
     <form id="residence"> 
+     <feildset> 
       <select id="habitat_type">
         <option value="house" id="house">House</option>
         <option value="apartment" id="apt">Apartment</option>
@@ -36,25 +37,20 @@
         <option value="dormitory" id="dorm">Dorm</option>
           <option value="other" id="other">Other</option>
       </select>
-    </form>
+    </feildset>
 </div>
-
- </div> <!--close CONTAINER-->
-    
-
-     <!---DELIVERY INFO -->
-     <form id="delAddress">
+       
+       <!---DELIVERY INFO -->
+     <fieldset id="delAddress">
       <div class="form-group">
          
-         <!---NAME INPUT -->
+        <!---NAME INPUT -->
           <label for="input_name" class="col-sm-3 control-label" >Name</label>
           <div class="col-sm-8"> 
           <input id="input_name" class="form_control" type="text" placeholder="Name">
           <span>*</span><br>
           </div>
-       
-     
-      <!---ADDRESS INPUT -->
+        <!---ADDRESS INPUT -->
        
     <label class="col-sm-3 control-label" for="input_address">Address</label>
          <div class="col-sm-8">
@@ -62,30 +58,25 @@
           placeholder="Address">
           <span>*</span><br>
           </div>
-      
-       <!---SUITE INPUT -->
+      <!---SUITE INPUT -->
                
           <label class="col-sm-3 control-label" for="inputApt">Apt. or Suite</label></div>
           <div class="col-sm-8">
           <input class="form-control" type="text" id="input_apartment"
           placeholder="No. or Ste.">  
           </div> 
-   
-          <!---ZIP INPUT -->
+       <!---ZIP INPUT -->
            
           <label class="col-sm-3 control-label" for="input_zip">ZIP Code</label>
-             
           <div class="col-sm-8">
           <input class="form-control" type="text" id="input_zip"
           placeholder="Zip:">
           <span>*</span><br> 
           </div> 
-          
-          <!---PHONE INPUT -->
+        <!---PHONE INPUT -->
            
           <label class="col-sm-3 control-label" for="input_phone">Phone #</label>
-            
-          <div class="col-sm-8">
+        <div class="col-sm-8">
           <input class="form-control" type="text" id="input_phone"
           placeholder="Phone number:">
           <span>*</span><br>
@@ -100,44 +91,30 @@
           placeholder="Email:">
           <span>*</span><br> 
           </div> 
-          </form>  
+      </fieldset>
+           
              
 <!---RADIO BUTTON PIZZA TYPE -->
              
- <form id="pizza_choice">  
+ <fieldset id="crust_radio">  
     <label>Pizza type and size</label>      
-    <!---Tossed Crust -->
     
-<div class="dropdown"><label for="tossed_crust" class="radio-inline">Tossed Crust </label> <input id="tossed_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "tossed" data-toggle="dropdown" value=""/>
-
-    <li><a href="#">Small</a></li>
-    <li><a href="#">Medium</a></li>
-    <li><a href="#">Large</a></li>
-  </ul>  
-</div> 
-    <!---Thin Crust -->
-    <div class="dropdown"><label for="thin_crust" class="radio-inline">Thin Crust </label> <input id="thin_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "thinCrust" data-toggle="dropdown"/>
-    <li><a href="#">Medium</a></li>
-    <li><a href="#">Large</a></li>
-  
-  </ul> 
-</div> 
+    <!---Tossed Crust -->
+<label for="tossed_crust" class="radio-inline"><input id="tossed_crust" name="pizza_crust" type="radio" value= "tossed_crust">Hand Tossed</label>
+ 
+    
      <!---NYC Crust -->
- <div class="dropdown"><label for="nyc_crust" class="radio-inline">NYC Crust  </label><input id="nyc_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "nycCrust" data-toggle="dropdown">
-    <li><a href="#">Large</a></li>
-    <li><a href="#">ExLarge</a></li>
-</ul> 
-</div>                   
-     <!---Gluten free -->
-<div class="dropdown"><label for="free_crust" class="radio-inline">Gluten Free </label><input id="free_crust" name="pizzaStyle" class="btn btn-primary dropdown-toggle" type="radio" value= "gltnFree" data-toggle="dropdown">
-    <li><a href="#">Small</a></li>
-</ul> 
-</div>                        
-    </form> 
+<label for="nyc_crust" class="radio-inline"><input id="nyc_crust" name="pizza_crust"   type="radio" value= "nyc_crust">NewYorkCity Crust</label>
+                        
      
-    <!-- CHEESE   --> 
+     <!---Gluten free -->
+<label for="free_crust" class="radio-inline"><input id="free_crust" name="pizza_crust" type="radio" value= "free_crust">Gluten Free</label>
+                            
+    </fieldset> <!--END CRUST SIZE CHOICE
+    
+      <!-- CHEESE   --> 
        
-    <form idcheeseSauce> 
+  <fieldset>   
 <label>Cheese selection:</label>
   <div>
       <select>
@@ -157,7 +134,7 @@
   <option value="2.99" name="bbq">BBQ Sauce +$2.99</option>
   </select>
   </div>
-    </form> 
+    </fieldset> 
     <!--end Row -->
     
      
@@ -208,26 +185,19 @@
             <p class="clearBoth">
               <label for="delDisplay">Your Address</label><br />
               <textarea name="deliveryAddress" id="delDisplay" cols="45" rows="5" tabindex="270"></textarea>
-         </p>
+             </p>
           
           
               <input type="button" id="order_btn" value="Place Order">
           
           </fieldset>
-          <!--
-          <div class="order">
-             <span>orderInfo</span>Your order is on its way. 
-         </div>
-    <div  class="order">
-        your cost <span id="price">0.00</span> you will be called <span id="add"></span>
+           <span id="add"></span>
     </div>
-       <!--close toppings FORM-->
-       </div><!--end Row -->
+</form><!--close toppings FORM-->
+        
   
-  <!--close JUMBOTRON--> 
-
-<!-- close CONTAINER -->
-
+  </div><!--closeJUMBOTRON-->
+ </div> <!--close CONTAINER-->
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/script.js"></script>
 

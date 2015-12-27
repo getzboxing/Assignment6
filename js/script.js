@@ -17,15 +17,81 @@ function myFunction(){
         
         var addrText = document.createElement("INPUT");
         addrText.setAttribute("type", "text");
-         
+        addrText.setAttribute("placeholder", "enter address"); 
         addrText.className = "css_class_name";
         document.body.appendChild(addrText); // put it into the DOM
         //("residence").appendChild(addrText);
-        
-        
-    }
-         
+        }
     } 
+
+/*RADIO BUTTONS DROPDOWN MENU*/
+     
+     var tossedCrust=$("tossed_crust");
+     tossedCrust.onclick=function(){
+         var x = document.createElement("SELECT");
+        x.setAttribute("id","mySelect");
+         document.body.appendChild(x);
+         
+         var z = document.createElement("option");
+    z.setAttribute("value", "size:");
+    var t = document.createTextNode("small");
+    z.appendChild(t);
+    document.getElementById("mySelect").appendChild(z);
+         
+         var zz = document.createElement("option");
+    zz.setAttribute("value", "size:");
+         var tt = document.createTextNode("medium");
+    zz.appendChild(tt);
+    document.getElementById("mySelect").appendChild(zz);
+         
+         mySelect.className = "css_radioOne";
+     };
+    
+            var nycCrust=$("nyc_crust");
+                nycCrust.onclick=function(){
+            var x2 = document.createElement("SELECT");
+                x2.setAttribute("id","mySelect2");
+                 document.body.appendChild(x2);
+
+            var z2 = document.createElement("option");
+                z2.setAttribute("value", "size:");
+            var t2 = document.createTextNode("small");
+                z2.appendChild(t2);
+                document.getElementById("mySelect2").appendChild(z2);
+
+            var zz2 = document.createElement("option");
+                zz2.setAttribute("value", "size:");
+            var tt2 = document.createTextNode("medium");
+                zz2.appendChild(tt2);
+                document.getElementById("mySelect2").appendChild(zz2);
+
+                 mySelect2.className = "css_radioTwo";
+             };
+
+
+
+
+                var freeCrust=$("free_crust");
+                freeCrust.onclick=function(){
+                var x3 = document.createElement("SELECT");
+                x3.setAttribute("id","mySelect3");
+                 document.body.appendChild(x3);
+
+                var z3 = document.createElement("option");
+                z3.setAttribute("value", "size:");
+                var t3 = document.createTextNode("small");
+                z3.appendChild(t3);
+                document.getElementById("mySelect3").appendChild(z3);
+
+                var zz3 = document.createElement("option");
+                zz3.setAttribute("value", "size:");
+                var tt3 = document.createTextNode("medium");
+                zz3.appendChild(tt3);
+                document.getElementById("mySelect3").appendChild(zz3);
+
+                 mySelect3.className = "css_radioThree";
+             };
+
 
 /*VALIDATE NAME working!*/ 
  var order = function(){
@@ -43,6 +109,8 @@ function myFunction(){
          inputName.nextElementSibling.firstChild.nodeValue = "Name must contain only letters";
                 isValid = false;
                }
+     
+     
      
      /*VALIDATE ADDRESS working!*/
      
@@ -96,28 +164,9 @@ function myFunction(){
      }
      
      
-     /*RADIO BUTTONS DROPDOWN MENU*/
-$("habitat_type").onchange = function(){myFunction()};
-
-function myFunction(){
-    
-    var x = $("habitat_type").selectedIndex;
-    if (document.getElementsByTagName("option")[x].value == "other"){
-        alert("alert");
-        
-        var addrText = document.createElement("INPUT");
-        addrText.setAttribute("type", "text");
+       
          
-        addrText.className = "css_class_name";
-        document.body.appendChild(addrText); // put it into the DOM
-        //("residence").appendChild(addrText);
-        
-        
-    }
-         
-    }      
-     
-     }//end ORDER FUNCTION
+  }//end ORDER FUNCTION
  
  
  
@@ -126,142 +175,10 @@ function myFunction(){
      
  }
 
-/* 
-//function order(){
-    //alert("works");
-
-
-    var price = 0.00;
-
-        var fullname = document.getElementById("inputName").addEventListener("onchange");
-     document.getElementById("inputName").innerHTML = fullname.onchange;
-
-console.log("r"+fullname.value);
-      
-     <!--radio buttons
-       var type = document.pizzaChoice.pizzaStyle.
-         var pType;    
-       for(var i in type){
-           if(type[i].checked){
-               pType=type[i].value
-           }
-       }
-swith(pType)
-{
-    case "tossedCrust": price = price +17.00;
-    break;
-    case "thinCrust": price = price +18.00;
-    break;
-    case "nycCrust": price = price +20.00;
-    break;
-    case "gltnFreeCrust": price = price +22.00;
-    break;
-}
-
-var total = document.getElementById("price");
-total.innerHTML = price;
-    
-var crust = document.pizzaChoice.pizzaStyle.value;
-
-    switch(size)
-        {
-            case "small": price = price; 
-            break;
-            case "medium"; price = price + 4;
-            break;
-            case "large"; price = price + 7;
-            break;
-            case "exlarge"; price = price + 9;
-            break;
-        }
-                
-                
-                
-   // var name = document.delAddress.inputName.value;
-    //document.getElementById("inputName").innerHTML = name;
-    //console.log(name);
-//}
-
-/*
-function myFunction() {
-    var x = getElementById("habitatType").value;
-    console.log(x);
-}
-var inputName = document.getElementById("inputName").value;
-    console.log("name " +inputName.value)
-    
-    //CRUST OPTIONS 
-var tssdCrust = document.getElementById("tssdCrust");
-tssdCrust.onclick = function(){
-    alert("tossed crust");
-}
-
-var thnCrust = document.getElementById("thnCrust");
-thnCrust.onclick = function(){
-    alert("thin crust");
-}
-
-
-var nycCrust = document.getElementById("nycCrust");
-nycCrust.onclick = function(){
-    alert("NYC crust");
-}
-
-var gltnFrCrust = document.getElementById("gltnFrCrust");
-gltnFrCrust.onclick = function(){
-    alert("glutenfree crust");
-}
-*/
-//var pizzaStyleChoice = document.getElementById("crustSelect").pizzaStyle;
-/*
-function myCrustSelect() {
-    var x = document.getElementById("mySelect");
-    var i = x.selectedIndex;
-    document.getElementById("crust").innerHTML = x.options[i].text;
-}
-console.log("crust " + crust);
-*/
-//radio button selector
- 
-
-/*  
-var crustSelect= document.getElementById("crustSelect").pizzaStyle;
- for (var i=0; i<crustSelect.length; i++){
-    if (crustSelect[i].checked == true){
-        alert(selections[i].value);
-    }
- }
-}
-
-window.onload = function(){
-    prpareEventHandlers();
-}
-*/
-
-
-/*
-var myRE = /hello./;
- 
-var myRE = new RegExp("hello");
-
-var myString = "Does this sentence have the word the word hello in it?";
-if (myRE.test(myString)){
-    alert("yes");
-}
-var temp = "a";
-var mySelect = document.getElementById('mySelect');
-
-for(var i, j = 0; i = mySelect.options[j]; j++) {
-    if(i.value == temp) {
-        mySelect.selectedIndex = j;
-        break;
-    }
-}   
-// test returns true/false     search returns position of first match
 
 //var myRE = /^hello/; returns string that begins with hello
 //ZIP CODE /^[0-9]{5}(?:-[0-9]{4})?$/
 //EMAIL /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/
-*/
+ 
 
 
